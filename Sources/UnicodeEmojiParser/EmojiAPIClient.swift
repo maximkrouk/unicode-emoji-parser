@@ -1,5 +1,6 @@
 import UnicodeEmojiModels
 import OrderedCollections
+import Parsing
 
 public struct EmojiAPIClient: Sendable {
 	public var fetchEmojis: @Sendable () async throws -> EmojiList
@@ -11,12 +12,15 @@ public struct EmojiAPIClient: Sendable {
 
 extension EmojiAPIClient {
 	public static var `default`: EmojiAPIClient {
-		return .default(for: .default)
+		return .default()
 	}
 
-	public static func `default`(for sourceAPIClient: EmojiSourceAPIClient) -> EmojiAPIClient {
+	public static func `default`(
+		for sourceAPIClient: EmojiSourceAPIClient = .default,
+		parser: any Parser<EmojiList, Substring> = UnicodeEmojiSourceParser()
+	) -> EmojiAPIClient {
 		let parserContainer = UncheckedSendableEmojiSourceParserContainer(
-			parser: UnicodeEmojiSourceParser()
+			parser: parser
 		)
 
 		return .init(
@@ -29,5 +33,5 @@ extension EmojiAPIClient {
 }
 
 private struct UncheckedSendableEmojiSourceParserContainer: @unchecked Sendable {
-	let parser: UnicodeEmojiSourceParser
+	let parser: any Parser<EmojiList, Substring>
 }
