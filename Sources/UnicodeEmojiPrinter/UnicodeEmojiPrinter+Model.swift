@@ -13,7 +13,7 @@ extension UnicodeEmojiPrinter {
 
 	@StringBuilder
 	static func emojiValue(_ input: Emoji.Value) -> String {
-		initializer("Emoji.Value", forceUnwrap: true) {
+		initializer("Emoji.Value") {
 			"""
 			unicodeScalars: \(unicodeScalars(input.unicodeScalars)),
 			version: \(emojiVersion(input.version)),
@@ -46,7 +46,12 @@ extension UnicodeEmojiPrinter {
 	@StringBuilder
 	static func unicodeScalars(_ input: [Unicode.Scalar]) -> String {
 		"["
-		input.map { String(format: "0x%X", $0.value) }.joined(separator: ", ")
+		input.map { escapedString(unicodeScalar($0)) }.joined(separator: ", ")
 		"]"
+	}
+
+	@StringBuilder
+	static func unicodeScalar(_ input: Unicode.Scalar) -> String {
+		"\\u{" + String(format: "%X", input.value) + "}"
 	}
 }

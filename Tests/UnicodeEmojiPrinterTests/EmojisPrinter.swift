@@ -11,15 +11,15 @@ struct EmojisPrinterTests {
 		let input = [
 			Emoji(
 				value: Emoji.Value(
-					unicodeScalars: [0x1F600],
+					unicodeScalars: ["\u{1F600}"],
 					version: SemanticVersion(0, 1, 0),
 					status: .fullyQualified,
 					name: "grinning face",
 					attributes: []
-				)!,
+				),
 				skinTones: [
 					Emoji.Value(
-						unicodeScalars: [0x1F9D8, 0x1F3FB, 0x200D, 0x2642],
+						unicodeScalars: ["\u{1F9D8}", "\u{1F3FB}", "\u{200D}", "\u{2642}"],
 						version: SemanticVersion(0, 5, 0),
 						status: .minimallyQualified,
 						name: "man in lotus position",
@@ -27,9 +27,9 @@ struct EmojisPrinterTests {
 							"light skin tone",
 							"medium-light skin tone"
 						]
-					)!,
+					),
 					Emoji.Value(
-						unicodeScalars: [0x1F9D8, 0x1F3FB, 0x200D],
+						unicodeScalars: ["\u{1F9D8}", "\u{1F3FB}", "\u{200D}"],
 						version: SemanticVersion(0, 5, 0),
 						status: .minimallyQualified,
 						name: "man in lotus position",
@@ -37,20 +37,20 @@ struct EmojisPrinterTests {
 							"light skin tone",
 							"medium-light skin tone"
 						]
-					)!
+					)
 				]
 			),
 			Emoji(
 				value: Emoji.Value(
-					unicodeScalars: [0x1F3FB],
+					unicodeScalars: ["\u{1F3FB}"],
 					version: SemanticVersion(0, 1, 0),
 					status: .fullyQualified,
 					name: "grinning face",
 					attributes: []
-				)!,
+				),
 				skinTones: [
 					Emoji.Value(
-						unicodeScalars: [0x1F9D8, 0x200D, 0x2642],
+						unicodeScalars: ["\u{1F9D8}", "\u{200D}", "\u{2642}"],
 						version: SemanticVersion(0, 5, 0),
 						status: .minimallyQualified,
 						name: "man in lotus position",
@@ -58,9 +58,9 @@ struct EmojisPrinterTests {
 							"light skin tone",
 							"medium-light skin tone"
 						]
-					)!,
+					),
 					Emoji.Value(
-						unicodeScalars: [0x1F3FB, 0x200D],
+						unicodeScalars: ["\u{1F3FB}", "\u{200D}"],
 						version: SemanticVersion(0, 5, 0),
 						status: .minimallyQualified,
 						name: "man in lotus position",
@@ -68,7 +68,7 @@ struct EmojisPrinterTests {
 							"light skin tone",
 							"medium-light skin tone"
 						]
-					)!
+					)
 				]
 			)
 		]
@@ -81,15 +81,15 @@ struct EmojisPrinterTests {
 			static let generated: Self = [
 				Emoji(
 					value: Emoji.Value(
-						unicodeScalars: [0x1F600],
+						unicodeScalars: ["\\u{1F600}"],
 						version: SemanticVersion(0, 1, 0),
 						status: .fullyQualified,
 						name: "grinning face",
 						attributes: []
-					)!,
+					),
 					skinTones: [
 						Emoji.Value(
-							unicodeScalars: [0x1F9D8, 0x1F3FB, 0x200D, 0x2642],
+							unicodeScalars: ["\\u{1F9D8}", "\\u{1F3FB}", "\\u{200D}", "\\u{2642}"],
 							version: SemanticVersion(0, 5, 0),
 							status: .minimallyQualified,
 							name: "man in lotus position",
@@ -97,9 +97,9 @@ struct EmojisPrinterTests {
 								"light skin tone",
 								"medium-light skin tone"
 							]
-						)!,
+						),
 						Emoji.Value(
-							unicodeScalars: [0x1F9D8, 0x1F3FB, 0x200D],
+							unicodeScalars: ["\\u{1F9D8}", "\\u{1F3FB}", "\\u{200D}"],
 							version: SemanticVersion(0, 5, 0),
 							status: .minimallyQualified,
 							name: "man in lotus position",
@@ -107,20 +107,20 @@ struct EmojisPrinterTests {
 								"light skin tone",
 								"medium-light skin tone"
 							]
-						)!
+						)
 					]
 				),
 				Emoji(
 					value: Emoji.Value(
-						unicodeScalars: [0x1F3FB],
+						unicodeScalars: ["\\u{1F3FB}"],
 						version: SemanticVersion(0, 1, 0),
 						status: .fullyQualified,
 						name: "grinning face",
 						attributes: []
-					)!,
+					),
 					skinTones: [
 						Emoji.Value(
-							unicodeScalars: [0x1F9D8, 0x200D, 0x2642],
+							unicodeScalars: ["\\u{1F9D8}", "\\u{200D}", "\\u{2642}"],
 							version: SemanticVersion(0, 5, 0),
 							status: .minimallyQualified,
 							name: "man in lotus position",
@@ -128,9 +128,9 @@ struct EmojisPrinterTests {
 								"light skin tone",
 								"medium-light skin tone"
 							]
-						)!,
+						),
 						Emoji.Value(
-							unicodeScalars: [0x1F3FB, 0x200D],
+							unicodeScalars: ["\\u{1F3FB}", "\\u{200D}"],
 							version: SemanticVersion(0, 5, 0),
 							status: .minimallyQualified,
 							name: "man in lotus position",
@@ -138,7 +138,7 @@ struct EmojisPrinterTests {
 								"light skin tone",
 								"medium-light skin tone"
 							]
-						)!
+						)
 					]
 				)
 			]

@@ -1,4 +1,3 @@
-import UnicodeEmojiParser
 import OrderedCollections
 
 public enum UnicodeEmojiPrinter {

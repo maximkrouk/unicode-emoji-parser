@@ -17,7 +17,7 @@ extension EmojiAPIClient {
 
 	public static func `default`(
 		for sourceAPIClient: EmojiSourceAPIClient = .default,
-		parser: any Parser<EmojiList, Substring> = UnicodeEmojiSourceParser()
+		parser: any Parser<Substring, EmojiList> = UnicodeEmojiSourceParser()
 	) -> EmojiAPIClient {
 		let parserContainer = UncheckedSendableEmojiSourceParserContainer(
 			parser: parser
@@ -33,5 +33,5 @@ extension EmojiAPIClient {
 }
 
 private struct UncheckedSendableEmojiSourceParserContainer: @unchecked Sendable {
-	let parser: any Parser<EmojiList, Substring>
+	let parser: any Parser<Substring, EmojiList>
 }
